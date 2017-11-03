@@ -1,0 +1,47 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    color: #ffffff;
+    font: 18px/1.5 'Ubuntu', sans-serif;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 2em;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+
+#wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -130px;
+    margin-left: -300px;
+    height: 260px;
+    width: 600px;
+    text-align: center;
+}
+
+
+
+.box{ float:left; position:relative; padding:1px; top:10%;  opacity:0.5;z-index:4;  opacity:1; }
+.box4{ float:left; position:relative; padding:1px; top:10%;  opacity:0.5;z-index:4;  opacity:1; }
+.box2{ padding-top: 10%;width:100%; height:100%; margin:0 auto; display:none; z-index:5; position:fixed; background:rgba(0, 0, 0, 0.52) none repeat scroll 0% 0%; opacity:1;}
+
+.box3{ padding-left:20%;padding-top: 1%;width:100%; height:100%; margin:0 auto; display:none; z-index:5; position:fixed; background:rgba(0, 0, 0, 0.52) none repeat scroll 0% 0%; opacity:1;}
+.login51{border:7px solid #2DBCAE;	border-radius: 15px; padding:40px 40px 50px; margin:0 auto; background:#EFEFEF; height:300px; }
+.login52{border:7px solid #2DBCAE;	border-radius: 15px; padding:40px 40px 50px; margin:0 auto; background:#EFEFEF; }

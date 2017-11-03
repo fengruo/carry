@@ -1,0 +1,35 @@
+@CHARSET "UTF-8";
+
+#mei {
+	overflow: hidden;
+	padding: 0px 5px;
+	margin: 0px 0px;
+	border-radius: 5px;	
+	width: 100%;
+
+}
+#mei dl{
+	float: left;
+}
+
+#mei dl dd {
+	padding-left: 0px;
+	font-size: 15px;
+	line-height: 24px;
+	border-radius: 15px;
+}
+#mei span {
+	margin-left:10px;
+}
+
+#mei img{
+	border-radius: 15px;
+	border:2px solid green; 
+	width: 170px;
+	height: 130px;
+			
+}
+#mei dl dd span{
+	font-weight: bold;
+	color:#FF7A4D;
+}

@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+.a1{
+	text-decoration:none;
+	color: #7F483D;
+	
+}
+/*二维码开始*/
+ .right-sider-bar {
+    display:none;
+    position:fixed;
+    top:200px;
+}
+ @media(min-width:1280px) {
+ .right-sider-bar {
+ display:block;
+ position:fixed;
+ right:50px;
+}
+}
+ @media(min-width:1360px) {
+ .right-sider-bar {
+ display:block;
+ position:fixed;
+ right:80px;
+}
+}
+/*二维码结束*/

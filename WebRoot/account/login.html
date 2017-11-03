@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>携动人生</title>
+    <meta charset="UTF-8"/>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+		<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="../css/bootstrap.css"/> 
+<link rel="stylesheet" href="../css/stylesheet.css"/>
+<script src="../js/jquery.min.js"></script> 
+<script type="text/javascript" src="../js/jquery.easydrag.handler.beta2.js"></script>
+<script type="text/javascript" src="../js/jquery.js"></script>
+
+<script>
+
+
+$(document).ready(function()
+{
+$("#deng").click(function()
+{
+ 
+  if($("#inputAccount").val()==""||$("#inputAccount")==null)
+  {
+     alert("请输入账号");
+     return false;
+  }
+ /*  else if(!reg.test($("#inputAccount").val()))
+  {
+    alert("请输入数字")
+  
+  } */
+ 
+ else if (isNaN($("#inputAccount").val()))
+{
+ alert("请输入正确的学号");
+ return false;	
+}
+    
+  else if($("#inputAccount").val().length<8||$("#inputAccount").val().length>16)
+  {
+   alert("请输入8——16位的账号");
+   return false;
+  }
+  else if ($("#inputPassword").val()==""||$("#inputPassword").val()==null)
+  {
+    alert("请输入密码");
+    return false;
+  }    
+});
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	
+		
+		$('.box2').show();
+		
+		
+	
+			
+	$('.go-register a').click(function(){
+		
+		
+		$('.box2').hide();
+		location.href = "../index/index.jsp";
+		
+		});
+		
+	$('.box').easydrag();
+	
+	
+	});
+</script>
+  </head>
+  <body>
+ 
+  <div class="box" >
+<div class="box2" >
+
+    <form class="form-horizontal login-form login51" role="form" method="post" action="verify">
+         
+            <div class="form-group">
+        <label for="inputAccount">登录帐号</label>
+        <input type="text" class="form-control" id="inputAccount" name="account" placeholder="请输入你的学号" value=""/>
+      </div>
+      <div class="form-group">
+        <label for="inputPassword">登录密码</label>
+        <input type="password" class="form-control" id="inputPassword" name="password" placeholder="请输入你的密码" value=""/>
+      </div>
+      <div class="checkbox">
+      </div>
+      <button type="submit" class="btn btn-default" id="deng">登录</button>
+      <div class="go-register">
+        还没有帐号？<a href="register.html">快来注册</a><a class="close">返回</a>
+      </div>
+       
+    </form>
+    </div>
+    </div>
+  </body>
+</html>

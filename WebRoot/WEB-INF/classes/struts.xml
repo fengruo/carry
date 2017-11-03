@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.multipart.saveDir"   value="/tmp"/>
+    <constant name="struts.custom.i18n.resources" value="messageResource"/>
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.i18n.encoding" value="utf-8"/>
+    
+     <package name="fileShow"  extends="struts-default">
+     <!-- 图片显示 -->
+     <action name="fileShow" class="com.struts2.imageshow.action.FileShowAction" method="show">
+     </action>
+     </package>
+     
+     <!-- 用户信息修改 -->
+    <package name="user_account_revise"   extends="struts-default">
+    
+     <!-- 用户信息 -->
+  <action name="user_account" class="com.carry.action.user_infoAction">
+  <result name="success">/per_space/user_account.jsp</result>
+  </action>
+    <action name="user_account_revise" class="com.carry.action.useraccount_revise" >
+  <result name="success" type="chain">user_account</result>
+  </action>
+    </package>
+    <package name="index"  namespace="/classify"  extends="struts-default">
+     <action name="index" >
+			<result name="success">/classify/index_login.jsp</result>
+		</action>
+    </package>
+    <package name="content"  namespace="/classify"  extends="struts-default">
+    <!-- 全部信息 -->
+		<action name="content" class="com.struts2.imageshow.service.getAll">
+			<result name="success">/classify/content.jsp</result>
+		</action>
+		
+		<!-- 全部信息 -->
+		<action name="content_two" class="com.struts2.imageshow.service.getAll_two">
+			<result name="success">/classify/content.jsp</result>
+		</action>
+		 <!-- 用户修改信息 -->
+  
+  
+    </package>
+    
+  <package name="user_info"  namespace="/per_space"  extends="struts-default">
+ 
+ <!-- 用户发布信息 -->
+   <action name="getUserUpAll" class="com.struts2.imageshow.service.getUserUpAll" >
+  <result name="success">/per_space/uped_info.jsp</result>
+  </action>
+  
+  <!-- 删除发布的信息 -->
+  <action name="upedDelAction"  class="com.carry.action.upedDelAction" method="execute">
+   <result name="success" type="chain">getUserUpAll</result> 
+    </action>
+<!-- 响应用户信息 -->
+<action name="oter_check" class="com.carry.action.oter_checkAction">
+		<result name="success">/per_space/oter_check.jsp</result>
+		</action>
+	<!-- 响应用户信息删除 -->	
+		<action name="check_del" class="com.carry.action.check_delAction">
+		<result name="success" type="chain">self_check</result>
+		</action>
+		
+  <!-- 用户响应信息 -->
+  <action name="self_check" class="com.carry.action.self_checkAction">
+		<result name="success" >/per_space/check_info.jsp</result>
+		</action>
+
+  <!-- 用户修改信息结果 -->
+
+  
+  
+  
+<!--  图片上传显示 -->
+	
+	
+		<action name="fileUpload" class="com.struts2.imageshow.action.FileUploadAction" >
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">
+					image/bmp, image/png, image/gif, image/jpg, image/jpeg
+				</param>
+				<param name="maxmunSize">404800</param>
+			</interceptor-ref>
+			 <result name="success" type="chain">getUserUpAll</result>  
+			<result name="input">/per_space/info_upload.jsp</result>
+		</action>
+		
+		
+		
+	
+		<action name="fileUploadPage">
+			<result name="success" >/per_space/info_upload.jsp</result>
+			
+		</action>
+		
+		
+		</package>
+		
+		<!-- 密码修改成功与否 -->
+	<package name="password_re"  namespace="/"  extends="struts-default">
+ <action name="password_re" class="com.carry.action.password_re" >
+   <result name="success">/per_space/password_reSuccess.jsp</result>
+    <result name="input">/per_space/password_refales.jsp</result>
+  </action>
+  </package>
+  	
+		<package name="adminInfo" extends="struts-default" namespace="/admin">
+			 <action name="toAdmin" class="com.struts2.admin.SelectAdminAction">
+				<result name="success">/admin/adminInfo/admin.jsp</result>
+			</action>
+			
+			<!-- 无效的Action -->
+			<!--  <action name="userinfoall" class="com.struts2.admin.service.UserInfoAllAction">
+				<result name="success">/admin/userInfo.jsp</result>
+			</action> -->
+			
+			
+			<action name="user_del" class="com.struts2.admin.service.UseDelAction">
+				<result name="success" type="chain">userinfoall</result>
+			</action>
+			
+		<!-- 无效的Action -->
+		<!-- 	<action name="active" class="com.struts2.admin.service.ActiveAction">
+				<result name="success_qxtx" >/admin/activeManage/qxtx.jsp</result>
+				<result name="success_bmqk" >/admin/activeManage/bmqk.jsp</result>
+				<result name="success_qqzz" >/admin/activeManage/qqzz.jsp</result>
+				<result name="success_yzxt" >/admin/activeManage/yzxt.jsp</result>
+		</action> -->
+			
+			<action name="info_del" class="com.struts2.admin.service.InfoDelAction">
+				<result name="success" type="chain">active</result>
+				</action>
+				<action name="admin_login" class="com.struts2.admin.service.AdminLoginAction">
+				<result name="success" >/admin/index.jsp?state=0</result>
+				<result name="input" >/admin/login.jsp?state=0</result>
+				<result name="error" >/admin/login.jsp?state=1</result>
+				</action>
+		</package>
+ 
+<package name="news" extends="struts-default" namespace="/news">
+
+<!-- 无效的得到所有的Action -->
+<!-- <action name="getAllNews" class="com.carry.action.GetNews">
+<result name="success">/news/news.jsp</result>
+</action> -->
+
+<action name="showDetails" class="com.carry.action.ShowNewsDetails">
+<result name="success">/news/news.jsp</result>
+</action>
+
+<action name="adminGetAllNews" class="com.carry.action.GetNews" method="adminGetAllNews">
+ <result name="success">/admin/newsInfo.jsp</result>
+ 
+ </action>
+
+
+
+<!--无效删除新闻  -->
+<!-- <action name="del_news" class="com.carry.action.Del_News" >
+<result name="success">../admin/newsInfo.jsp</result>
+</action> -->
+
+
+<!-- 插入新闻 -->
+<action name="InsertNews"  class="com.carry.action.InsertNews" >
+<result name="success">/admin/newsInsertSuccess.jsp</result>
+</action>
+
+</package>
+	
+		
+</struts>

@@ -1,0 +1,55 @@
+
+/* ==================================
+   Preloader
+   ================================== */
+.preloader{
+  background: #79CEC7 none repeat scroll 0 0;
+  display: block;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 999999999;
+}
+.preloader10 {
+    display: inline-block;
+    height: 20px;
+    left: 50%;
+    margin-left: -20px;
+    margin-top: -10px;
+    padding: 0;
+    position: absolute;
+    text-align: left;
+    top: 50%;
+    width: 40px;
+}
+.preloader10 span {
+   position:absolute;
+   display:inline-block;
+   width:20px;
+   height:20px;
+   border-radius:100%;
+   background:#ffd300;
+   -webkit-animation:preloader10 0.7s linear infinite alternate;
+   animation:preloader10 0.7s linear infinite alternate;
+}
+.preloader10 span:last-child {
+   animation-delay:-0.7s;
+   -webkit-animation-delay:-0.7s;
+   margin-left:20px;
+   background:#0096ff;
+}
+@keyframes preloader10 {
+   0% {transform: scale(0, 0);}
+   100% {transform: scale(1, 1);}
+}
+@-webkit-keyframes preloader10 {
+   0% {-webkit-transform: scale(0, 0);}
+   100% {-webkit-transform: scale(1, 1);}
+}
+
+
+.xianshi{
+	color:#FF7A4D;
+	font-family: "Î¢ÈíÑÅºÚ";
+	
+}

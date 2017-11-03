@@ -1,0 +1,48 @@
+@CHARSET "UTF-8";
+
+#mei {
+	overflow: hidden;
+	padding: 0px 5px;
+	margin: 0px 0px;
+	border-radius: 5px;	
+	width: 340px;
+	float: left;
+}
+
+
+
+#mei dl dt {
+	
+	width: 170px;
+	height: 140px;
+	float: left;
+	border-radius: 15px;
+	
+}
+#mei dl dd {
+	padding-left: 50px;
+	font-size: 15px;
+	line-height: 24px;
+	border-radius: 15px;
+}
+#mei span {
+	margin-left:10px;
+}
+
+#mei img{
+	border-radius: 15px;
+	border:2px solid green; 
+	width: 170px;
+	height: 130px;
+			
+}
+
+#mei .inp{
+	padding-left:5%;
+	padding-right:5%;
+	margin-left:28%;
+	border-radius: 15px;
+	width：70px;
+	height: 28px;
+}
+@CHARSET "UTF-8";
